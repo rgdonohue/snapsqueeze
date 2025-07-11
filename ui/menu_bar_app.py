@@ -5,6 +5,7 @@ from system.screenshot_handler import ScreenshotHandler
 from system.permissions import PermissionManager
 from ui.notifications import NotificationManager
 from ui.hotkey_manager import HotkeyManager
+from core.error_handler import error_handler, handle_errors, ErrorCode
 
 logger = logging.getLogger(__name__)
 
@@ -25,6 +26,9 @@ class SnapSqueezeApp(rumps.App):
         self.permission_manager = PermissionManager()
         self.notification_manager = NotificationManager()
         self.hotkey_manager = HotkeyManager()
+        
+        # Set up error handler with notification manager
+        error_handler.set_notification_manager(self.notification_manager)
         
         # App state
         self.is_capturing = False

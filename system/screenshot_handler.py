@@ -15,6 +15,7 @@ from Cocoa import (
 from Foundation import NSTimer
 from core.image_compressor import ImageCompressor
 from system.permissions import PermissionManager
+from core.error_handler import handle_errors, ErrorCode, ScreenshotError, ClipboardError
 
 logger = logging.getLogger(__name__)
 
@@ -152,23 +153,19 @@ class ScreenshotHandler:
         self.permission_manager = PermissionManager()
         self.overlay = None
         
+    @handle_errors(ErrorCode.SCREENSHOT_CAPTURE_ERROR, "region capture", return_on_error=False)
     def capture_region_and_compress(self):
         """Capture a region and compress it."""
-        try:
-            # Ensure permissions
-            if not self.permission_manager.ensure_permissions():
-                logger.error("Screen capture permission not granted")
-                return False
-            
-            # Show region selection overlay
-            self.overlay = RegionSelectionOverlay(callback=self._on_region_selected)
-            self.overlay.show_overlay()
-            
-            return True
-            
-        except Exception as e:
-            logger.error(f"Error starting region capture: {e}")
-            return False
+        # Ensure permissions
+        if not self.permission_manager.ensure_permissions():
+            logger.error("Screen capture permission not granted")
+            raise ScreenshotError("Screen capture permission not granted", ErrorCode.PERMISSION_DENIED)
+        
+        # Show region selection overlay
+        self.overlay = RegionSelectionOverlay(callback=self._on_region_selected)
+        self.overlay.show_overlay()
+        
+        return True
     
     def _on_region_selected(self, start_point, end_point):
         """Called when region selection is completed."""
@@ -260,31 +257,29 @@ class ScreenshotHandler:
             logger.error(f"Error converting CGImage to PNG: {e}")
             return None
     
+    @handle_errors(ErrorCode.CLIPBOARD_WRITE_ERROR, "clipboard write", return_on_error=False)
     def write_to_clipboard(self, image_data):
         """Write image data to clipboard."""
-        try:
-            # Get the pasteboard
-            pasteboard = NSPasteboard.generalPasteboard()
-            
-            # Clear existing contents
-            pasteboard.clearContents()
-            
-            # Create NSData from bytes
-            ns_data = NSData.dataWithBytes_length_(image_data, len(image_data))
-            
-            # Write to pasteboard
-            success = pasteboard.setData_forType_(ns_data, NSPasteboardTypePNG)
-            
-            if success:
-                logger.info("Image copied to clipboard successfully")
-                return True
-            else:
-                logger.error("Failed to copy image to clipboard")
-                return False
-                
-        except Exception as e:
-            logger.error(f"Error writing to clipboard: {e}")
-            return False
+        if not image_data:
+            raise ClipboardError("No image data to write", ErrorCode.CLIPBOARD_ACCESS_ERROR)
+        
+        # Get the pasteboard
+        pasteboard = NSPasteboard.generalPasteboard()
+        
+        # Clear existing contents
+        pasteboard.clearContents()
+        
+        # Create NSData from bytes
+        ns_data = NSData.dataWithBytes_length_(image_data, len(image_data))
+        
+        # Write to pasteboard
+        success = pasteboard.setData_forType_(ns_data, NSPasteboardTypePNG)
+        
+        if not success:
+            raise ClipboardError("Failed to write to clipboard", ErrorCode.CLIPBOARD_WRITE_ERROR)
+        
+        logger.info("Image copied to clipboard successfully")
+        return True
     
     def capture_full_screen(self):
         """Capture the full screen (for testing)."""
