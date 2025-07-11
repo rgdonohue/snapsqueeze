@@ -183,7 +183,7 @@ snapsqueeze/
 We welcome contributions! Here's how you can help:
 
 ### Quick Contributions
-- 🐛 **Report bugs** via GitHub Issues (repository coming soon)
+- 🐛 **Report bugs** via GitHub Issues (https://github.com/rgdonohue/snapsqueeze/issues)
 - 💡 **Suggest features** for future releases
 - 📖 **Improve documentation** and examples
 - 🌟 **Star the repository** to show support
