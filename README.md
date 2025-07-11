@@ -240,12 +240,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 💬 Support
 
-### Getting Help
-- 📖 **Documentation**: Check this README and project files
-- 🐛 **Bug Reports**: GitHub Issues (repository coming soon)
-- 💡 **Feature Requests**: GitHub Discussions (repository coming soon)
-- 📧 **Contact**: [hello@snapsqueeze.app](mailto:hello@snapsqueeze.app)
-
 ### FAQ
 
 **Q: Why does macOS ask for screen recording permission?**
