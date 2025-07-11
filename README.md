@@ -10,7 +10,7 @@
   [![macOS](https://img.shields.io/badge/macOS-10.15+-blue.svg)](https://www.apple.com/macos/)
   [![Python](https://img.shields.io/badge/Python-3.9+-green.svg)](https://www.python.org/)
   [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-  [![GitHub Release](https://img.shields.io/github/v/release/username/snapsqueeze.svg)](https://github.com/username/snapsqueeze/releases)
+  [![GitHub Release](https://img.shields.io/badge/Release-v1.0.0-blue.svg)](#)
 </div>
 
 ## 🚀 What is SnapSqueeze?
@@ -63,7 +63,7 @@ SnapSqueeze revolutionizes your screenshot workflow by **automatically compressi
 
 ### Installation
 
-1. **Download** the latest release from [GitHub Releases](https://github.com/username/snapsqueeze/releases)
+1. **Download** the latest release (coming soon - currently available as source)
 2. **Open** the downloaded DMG file
 3. **Drag** SnapSqueeze to your Applications folder
 4. **Launch** SnapSqueeze from Applications or Spotlight
@@ -141,7 +141,7 @@ WebP - Modern format with excellent compression
 
 ```bash
 # Clone the repository
-git clone https://github.com/username/snapsqueeze.git
+git clone <repository-url>
 cd snapsqueeze
 
 # Create virtual environment
@@ -183,7 +183,7 @@ snapsqueeze/
 We welcome contributions! Here's how you can help:
 
 ### Quick Contributions
-- 🐛 **Report bugs** via [GitHub Issues](https://github.com/username/snapsqueeze/issues)
+- 🐛 **Report bugs** via GitHub Issues (repository coming soon)
 - 💡 **Suggest features** for future releases
 - 📖 **Improve documentation** and examples
 - 🌟 **Star the repository** to show support
@@ -203,7 +203,7 @@ We welcome contributions! Here's how you can help:
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 🙏 Acknowledgments
 
@@ -241,9 +241,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 💬 Support
 
 ### Getting Help
-- 📖 **Documentation**: Check this README and [Wiki](https://github.com/username/snapsqueeze/wiki)
-- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/username/snapsqueeze/issues)
-- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/username/snapsqueeze/discussions)
+- 📖 **Documentation**: Check this README and project files
+- 🐛 **Bug Reports**: GitHub Issues (repository coming soon)
+- 💡 **Feature Requests**: GitHub Discussions (repository coming soon)
 - 📧 **Contact**: [hello@snapsqueeze.app](mailto:hello@snapsqueeze.app)
 
 ### FAQ
@@ -269,7 +269,7 @@ A: Simply drag the app from Applications to Trash, then restart to clear the men
   
 **Made with ❤️ for the macOS community**
 
-[Download](https://github.com/username/snapsqueeze/releases) • [Documentation](https://github.com/username/snapsqueeze/wiki) • [Support](https://github.com/username/snapsqueeze/issues)
+Download (coming soon) • Documentation (this README) • Support (contact below)
 
 *Shrink Your Shots. Boost Your Flow.*
 
