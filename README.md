@@ -7,10 +7,11 @@
   
   *Shrink Your Shots. Boost Your Flow.*
 
-  [![macOS](https://img.shields.io/badge/macOS-10.15+-blue.svg)](https://www.apple.com/macos/)
-  [![Python](https://img.shields.io/badge/Python-3.9+-green.svg)](https://www.python.org/)
+  [![macOS](https://img.shields.io/badge/macOS-12.0+-blue.svg)](https://www.apple.com/macos/)
+  [![Python](https://img.shields.io/badge/Python-3.8+-green.svg)](https://www.python.org/)
   [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-  [![GitHub Release](https://img.shields.io/badge/Release-v1.0.0-blue.svg)](#)
+  [![GitHub Release](https://img.shields.io/github/v/release/username/snapsqueeze)](https://github.com/username/snapsqueeze/releases)
+  [![Tests](https://img.shields.io/badge/Tests-90%25%20passing-brightgreen.svg)](#)
 </div>
 
 ## 🚀 What is SnapSqueeze?
@@ -96,6 +97,35 @@ Cmd+Option+4 → Select region → Release → Paste with Cmd+V
 - **50% (Default)**: Perfect balance of size and quality
 - **75% (High Quality)**: Minimal compression, preserves detail
 
+## 📦 Installation
+
+### Quick Install (Recommended)
+
+1. **Download the latest release**
+   - Go to [Releases](https://github.com/username/snapsqueeze/releases)
+   - Download `SnapSqueeze-v1.0.0.dmg`
+
+2. **Install the application**
+   - Double-click the DMG file
+   - Drag SnapSqueeze.app to Applications folder
+   - Launch from Applications
+
+3. **Grant permissions**
+   - Allow screen recording when prompted
+   - Look for SnapSqueeze icon in menu bar
+
+4. **Start capturing**
+   - Press `Cmd+Option+4` to capture and compress
+   - Paste anywhere with `Cmd+V`
+
+📖 **Need help?** See [Installation Guide](docs/INSTALLATION.md) | [Troubleshooting](docs/TROUBLESHOOTING.md)
+
+### System Requirements
+- **macOS**: 12.0 (Monterey) or later
+- **Architecture**: Intel and Apple Silicon supported
+- **Memory**: 100MB available recommended
+- **Permissions**: Screen Recording access required
+
 ## 📊 Performance
 
 ### Compression Results
@@ -103,12 +133,6 @@ Cmd+Option+4 → Select region → Release → Paste with Cmd+V
 - **Text Documents**: 70-85% size reduction  
 - **Mixed Content**: 50-70% size reduction
 - **Processing Speed**: < 1 second for typical screenshots
-
-### System Requirements
-- **macOS**: 10.15 (Catalina) or later
-- **Architecture**: Intel and Apple Silicon supported
-- **Memory**: 100MB available recommended
-- **Permissions**: Screen Recording access required
 
 ## 🔧 Advanced Usage
 

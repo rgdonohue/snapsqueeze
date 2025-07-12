@@ -1,0 +1,144 @@
+name: Bug Report
+description: Report a bug to help us improve SnapSqueeze
+title: "[Bug] "
+labels: ["bug", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the form below to help us understand and fix the issue.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      description: Please confirm you've completed these steps
+      options:
+        - label: I have searched existing issues to avoid duplicates
+          required: true
+        - label: I have read the [troubleshooting guide](https://github.com/username/snapsqueeze/blob/main/docs/TROUBLESHOOTING.md)
+          required: true
+        - label: I am using the latest version of SnapSqueeze
+          required: false
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: Describe what happened and what you expected to happen
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: Please provide step-by-step instructions to reproduce the issue
+      placeholder: |
+        1. Launch SnapSqueeze
+        2. Press Cmd+Option+4
+        3. Select a region
+        4. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: Describe the expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened instead?
+      placeholder: Describe what actually happened
+    validations:
+      required: true
+
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS Version
+      description: What version of macOS are you running?
+      placeholder: "e.g., macOS 13.2.1 (22D68)"
+    validations:
+      required: true
+
+  - type: input
+    id: snapsqueeze-version
+    attributes:
+      label: SnapSqueeze Version
+      description: What version of SnapSqueeze are you using?
+      placeholder: "e.g., v1.0.0 (from menu bar → About)"
+    validations:
+      required: true
+
+  - type: input
+    id: python-version
+    attributes:
+      label: Python Version
+      description: What version of Python is installed?
+      placeholder: "e.g., Python 3.11.2 (from `python3 --version`)"
+    validations:
+      required: false
+
+  - type: textarea
+    id: error-messages
+    attributes:
+      label: Error Messages or Logs
+      description: Include any error messages, notifications, or log output
+      placeholder: |
+        Paste error messages here. You can find logs with:
+        tail -f ~/Library/Logs/SnapSqueeze/app.log
+      render: shell
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem
+      placeholder: Drag and drop images here or paste them
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does this bug occur?
+      options:
+        - Always (100%)
+        - Often (75%)
+        - Sometimes (50%)
+        - Rarely (25%)
+        - Once
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here
+      placeholder: |
+        - Other apps running that might interfere
+        - Special system configuration
+        - Hardware details (e.g., external monitors)
+        - Any other relevant information
+
+  - type: textarea
+    id: system-info
+    attributes:
+      label: System Information (Optional)
+      description: |
+        Run this command in Terminal and paste the output:
+        ```bash
+        echo "=== System Info ===" && sw_vers && echo "" && echo "=== Memory ===" && vm_stat | head -5 && echo "" && echo "=== Python ===" && python3 --version && echo "" && echo "=== SnapSqueeze Process ===" && ps aux | grep -i snapsqueeze
+        ```
+      placeholder: Paste system information here
+      render: shell

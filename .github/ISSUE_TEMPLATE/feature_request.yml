@@ -1,0 +1,154 @@
+name: Feature Request
+description: Suggest a new feature or enhancement for SnapSqueeze
+title: "[Feature] "
+labels: ["enhancement", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! Please fill out the form below to help us understand your idea.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      description: Please confirm you've completed these steps
+      options:
+        - label: I have searched existing issues to avoid duplicates
+          required: true
+        - label: I have read the project roadmap and documentation
+          required: true
+
+  - type: textarea
+    id: feature-summary
+    attributes:
+      label: Feature Summary
+      description: A brief, clear description of the feature you'd like to see
+      placeholder: In one sentence, what feature would you like added?
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve?
+      placeholder: |
+        Is your feature request related to a problem? Please describe.
+        e.g., "I'm always frustrated when..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution you'd like to see
+      placeholder: |
+        A clear and concise description of what you want to happen.
+        Include details about how it should work.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What alternative solutions or features have you considered?
+      placeholder: |
+        Describe any alternative solutions or workarounds you've considered.
+        This helps us understand the broader context.
+
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature Type
+      description: What type of feature is this?
+      options:
+        - New capture mode or format
+        - UI/UX improvement
+        - Performance enhancement
+        - Integration with other apps
+        - Accessibility feature
+        - Developer/power user feature
+        - Configuration/settings option
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Critical (I can't use SnapSqueeze without this)
+        - High (This would significantly improve my workflow)
+        - Medium (This would be nice to have)
+        - Low (This is a minor enhancement)
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Use Cases
+      description: Describe specific scenarios where this feature would be useful
+      placeholder: |
+        Please provide 1-3 specific examples of when and how you would use this feature.
+        e.g., "When sharing screenshots in Slack..." or "When documenting bugs..."
+
+  - type: textarea
+    id: mockups
+    attributes:
+      label: Mockups or Examples
+      description: Visual examples or mockups of how this feature might look/work
+      placeholder: |
+        If you have mockups, screenshots from other apps, or visual examples,
+        please attach them here. This helps us understand your vision.
+
+  - type: dropdown
+    id: user-type
+    attributes:
+      label: User Type
+      description: How would you describe your usage of SnapSqueeze?
+      options:
+        - Casual user (occasional screenshots)
+        - Regular user (daily screenshots)
+        - Power user (heavy usage, customization)
+        - Developer (technical features)
+        - Team lead (sharing/collaboration features)
+    validations:
+      required: false
+
+  - type: textarea
+    id: implementation-ideas
+    attributes:
+      label: Implementation Ideas (Optional)
+      description: If you have technical knowledge, share implementation suggestions
+      placeholder: |
+        Do you have ideas about how this could be implemented?
+        Any technical considerations or constraints to keep in mind?
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Would you be interested in contributing to this feature?
+      options:
+        - label: I would be willing to test beta versions of this feature
+        - label: I would be willing to provide feedback during development
+        - label: I would be willing to contribute code for this feature
+        - label: I would be willing to help with documentation
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, links, or information about the feature request
+      placeholder: |
+        - Links to similar features in other applications
+        - References to user research or feedback
+        - Any other relevant information

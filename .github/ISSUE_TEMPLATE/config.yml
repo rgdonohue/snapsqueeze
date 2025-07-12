@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Documentation
+    url: https://github.com/username/snapsqueeze/blob/main/README.md
+    about: Read the documentation for usage instructions and examples
+  - name: 🛠️ Troubleshooting Guide
+    url: https://github.com/username/snapsqueeze/blob/main/docs/TROUBLESHOOTING.md
+    about: Common problems and solutions - check here first!
+  - name: 📋 Installation Guide
+    url: https://github.com/username/snapsqueeze/blob/main/docs/INSTALLATION.md
+    about: Step-by-step installation instructions and system requirements
+  - name: 💬 Discussions
+    url: https://github.com/username/snapsqueeze/discussions
+    about: Ask questions, share ideas, or discuss SnapSqueeze with the community
