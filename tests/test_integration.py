@@ -249,9 +249,12 @@ class TestErrorScenarios:
         """Test memory constraint scenario."""
         compressor = ImageCompressor()
         
-        # Mock low memory situation
+        # Mock low memory situation - fix numeric mock setup
         with patch('psutil.virtual_memory') as mock_memory:
-            mock_memory.return_value.available = 50 * 1024 * 1024  # 50MB
+            mock_memory_info = Mock()
+            mock_memory_info.available = 50 * 1024 * 1024  # 50MB
+            mock_memory_info.percent = 70.0  # Set numeric value for comparison
+            mock_memory.return_value = mock_memory_info
             
             # Create large image data
             large_image_data = b'0' * (60 * 1024 * 1024)  # 60MB

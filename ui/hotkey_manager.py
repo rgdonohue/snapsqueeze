@@ -5,7 +5,7 @@ from Quartz import (
     kCGEventKeyDown, kCGEventFlagsChanged, kCGKeyboardEventKeycode,
     kCGEventFlagMaskCommand, kCGEventFlagMaskAlternate, kCGEventFlagMaskShift,
     kCGEventFlagMaskControl, CGEventPost, kCGHIDEventTap, CFRunLoopGetCurrent,
-    CFRunLoopAddSource, kCGEventTapOptionListenOnly,
+    CFRunLoopAddSource, CFRunLoopRemoveSource, kCGEventTapOptionListenOnly,
     CFRunLoopRun, CFRunLoopStop, CFMachPortCreateRunLoopSource,
     kCFRunLoopDefaultMode
 )

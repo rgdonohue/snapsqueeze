@@ -33,7 +33,7 @@ class ImageCompressor:
         if format not in ['PNG', 'JPEG', 'WEBP']:
             raise ValueError("format must be PNG, JPEG, or WEBP")
     
-    @handle_errors(ErrorCode.IMAGE_COMPRESS_ERROR, "image compression")
+    @handle_errors(ErrorCode.IMAGE_COMPRESS_ERROR, "image compression", return_on_error=None)
     @performance_timer
     @memory_efficient
     def compress(self, image_data):
@@ -46,8 +46,12 @@ class ImageCompressor:
         Returns:
             bytes: Compressed image data, or original data if compression fails
         """
-        # Pre-compression validation
-        self._validate_input(image_data)
+        # Pre-compression validation - return original data if validation fails
+        try:
+            self._validate_input(image_data)
+        except Exception as e:
+            logger.warning(f"Input validation failed: {e}, returning original data")
+            return image_data
         
         # Use performance optimizer for large images or memory-constrained situations
         if len(image_data) > 5 * 1024 * 1024:  # 5MB threshold
@@ -124,7 +128,9 @@ class ImageCompressor:
     def _validate_input(self, image_data):
         """Validate input image data."""
         if not image_data:
-            raise ImageProcessingError("Empty image data", ErrorCode.IMAGE_LOAD_ERROR)
+            logger.warning("Empty image data provided")
+            # For empty data, we'll let the caller handle it by returning the original data
+            return
         
         if len(image_data) > self.max_image_size:
             raise ImageProcessingError(

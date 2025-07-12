@@ -84,12 +84,19 @@ class TestNotificationManager:
         
         mock_center.deliverNotification_.assert_called_once()
     
+    @patch('ui.notifications.NSAlertStyle')
     @patch('ui.notifications.NSAlert')
-    def test_show_alert(self, mock_alert_class):
+    def test_show_alert(self, mock_alert_class, mock_alert_style):
         """Test showing alert dialog."""
         mock_alert = Mock()
+        # Fix chained mock setup
         mock_alert_class.alloc.return_value.init.return_value = mock_alert
-        mock_alert.runModal.return_value = 1000  # NSAlertFirstButtonReturn
+        mock_alert.runModal.return_value = 1000  # NSAlertFirstButtonReturn constant
+        
+        # Mock NSAlertStyle constants
+        mock_alert_style.informational = 0
+        mock_alert_style.warning = 1
+        mock_alert_style.critical = 2
         
         manager = NotificationManager()
         result = manager.show_alert("Test Title", "Test Message")
@@ -99,12 +106,17 @@ class TestNotificationManager:
         mock_alert.setInformativeText_.assert_called_once_with("Test Message")
         mock_alert.runModal.assert_called_once()
     
+    @patch('ui.notifications.NSAlertStyle')
     @patch('ui.notifications.NSAlert')
-    def test_show_permission_request(self, mock_alert_class):
+    def test_show_permission_request(self, mock_alert_class, mock_alert_style):
         """Test showing permission request dialog."""
         mock_alert = Mock()
+        # Fix chained mock setup
         mock_alert_class.alloc.return_value.init.return_value = mock_alert
-        mock_alert.runModal.return_value = 1000  # NSAlertFirstButtonReturn
+        mock_alert.runModal.return_value = 1000  # NSAlertFirstButtonReturn constant
+        
+        # Mock NSAlertStyle constants
+        mock_alert_style.warning = 1
         
         manager = NotificationManager()
         result = manager.show_permission_request("Permission Title", "Permission Message")
